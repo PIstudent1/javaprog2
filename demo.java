@@ -13,7 +13,7 @@ public class demo{
 		for (int i = 0; i<2; i++){
            driv[i] = new Driver();
         }
-		driv[0].init("John", "Johnson", data1);
+		driv[0].input();
 		driv[1].init("Ivan", "Ivanov", data);
 		for (int i = 0; i<2; i++){
             driv[i].output();
