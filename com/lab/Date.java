@@ -69,7 +69,7 @@ public class Date{
 		this.year = year;
     }
 	
-	public void indays(Date date){
+	public int indays(Date date){
 		int sum;
 		int sum1;
 		if (this.month < 3) {
@@ -83,9 +83,7 @@ public class Date{
 	if(sum < sum1){
 		System.out.print("The first date is greater than the first");
 	}
-	else{
-	System.out.printf("Number of days between dates: %d", (sum-sum1));
-	}
+	return Helper.Help(sum,sum1);
 	}
 	
 }
