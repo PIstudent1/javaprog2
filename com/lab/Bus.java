@@ -30,8 +30,13 @@ public class Bus{
 		Engine busengine = new Engine();
 		System.out.print("\nBus info: ");
 		Scanner in = new Scanner(System.in);
-		System.out.print("\nInput mark: ");
-		mark = in.nextLine();
+		do{
+			System.out.print("\nInput mark: ");
+			mark = in.nextLine();
+			if(mark.trim().length() == 0 || mark == " "  || mark == "\n" ){
+			System.out.println("You haven't entered anything!"); 
+			}
+		}while(mark.trim().length() == 0 || mark == " "  || mark == "\n"  );
 		this.mark = mark;
 			do{
 			System.out.print("Input number: ");

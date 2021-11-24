@@ -25,11 +25,21 @@ public class Driver{
 		String lastname;
 		System.out.print("\nDriver info: ");
 		Scanner in = new Scanner(System.in);
-		System.out.print("\nInput name: ");
-		name = in.nextLine();
+		do{
+			System.out.print("\nInput name: ");
+			name = in.nextLine();
+			if(name.trim().length() == 0 || name == " "  || name == "\n" ){
+			System.out.println("You haven't entered anything!"); 
+			}
+		}while(name.trim().length() == 0 || name == " "  || name == "\n"  );
 		this.name = name;
-		System.out.print("Input lastname: ");
-		lastname = in.nextLine();
+		do{
+			System.out.print("\nInput lastname: ");
+			lastname = in.nextLine();
+			if(lastname.trim().length() == 0 || lastname == " "  || lastname == "\n" ){
+			System.out.println("You haven't entered anything!"); 
+			}
+		}while(lastname.trim().length() == 0 || lastname == " "  || lastname == "\n"  );
 		this.lastname = lastname;
 		System.out.print("Input birthdate: ");
 		Date birthdate = new Date();

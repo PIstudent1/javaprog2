@@ -46,8 +46,13 @@ public class Ticket{
 		Driver ticketdriver = new Driver();
 		System.out.print("\nTicket info: ");
 		Scanner in = new Scanner(System.in);
-		System.out.print("Input destination: ");
-		destination = in.nextLine();
+		do{
+			System.out.print("\nInput destination: ");
+			destination = in.nextLine();
+			if(destination.trim().length() == 0 || destination == " "  || destination == "\n" ){
+			System.out.println("You haven't entered anything!"); 
+			}
+		}while(destination.trim().length() == 0 || destination == " "  || destination == "\n"  );
 		this.destination = destination;
 		do{
 			System.out.print("Input sum: ");
