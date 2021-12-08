@@ -5,18 +5,11 @@ public class demo{
 	public static void main(String[] args) {
 		Date data = new Date();
 		Date data1 = new Date();
+		Ticket ticket = new Ticket();
 		int a = 0;
 		data.init(12,12,2021);
 		data1.init(12,12,1990);
 		a = data.indays(data1);
 		System.out.printf("Number days between days: %d", a);
-		for (int i = 0; i<2; i++){
-           driv[i] = new Driver();
-        }
-		driv[0].input();
-		driv[1].init("Ivan", "Ivanov", data);
-		for (int i = 0; i<2; i++){
-            driv[i].output();
-        }
 	}
 }
