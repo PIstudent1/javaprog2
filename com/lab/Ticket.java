@@ -2,22 +2,35 @@ package com.lab;
 import java.util.Scanner;
 
 public class Ticket{
+	static private int count;
+	private int id;
 	private int sum;
 	private String destination;
 	private int hours; 
 	private int minutes; 
 	private Driver ticketdriver = new Driver();
+
+
+	public static void ChangeDestination(Ticket ticket, String destination){  
+		ticket.destination = destination; 
+	}
 	
 	public void output(){
 		System.out.print("\nTicket info: ");
 		System.out.printf("\nDestination: %s", this.destination);
+		System.out.printf("\nId:", this.id);
 		System.out.printf("\nSum: %d", this.sum );
 		System.out.printf("\nTime: %d:%d", this.hours, this.minutes); 
 		this.ticketdriver.output();
 	}
 	public Ticket(){
 	}
-	public void init(String destination, int sum,  int hours, int minutes, Driver ticketdriver){
+
+    public Ticket(int value){
+		this.sum = value;
+	}
+
+	public Ticket(String destination, int sum,  int hours, int minutes, Driver ticketdriver){
 		this.destination = destination;
 		if (sum<0){
 			this.sum=0;
@@ -37,6 +50,9 @@ public class Ticket{
 		else{
 			this.minutes = minutes;
 		}
+		count++;
+		id = count;
+
 	}
 	public void input(){
 		int sum;
@@ -86,6 +102,8 @@ public class Ticket{
 		this.minutes = minutes;
 		ticketdriver.input();
 		this.ticketdriver = ticketdriver;
+		count++;
+		id = count;
 	}
 	
 	public void sale(){

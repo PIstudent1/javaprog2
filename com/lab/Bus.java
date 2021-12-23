@@ -5,7 +5,13 @@ public class Bus{
 	private String mark;
 	private int num;
 	private Engine busengine = new Engine();
-	
+
+	public Bus(){}
+
+	public Bus(int value){
+		this.num = value;
+	}
+
 	public void output(){
 		System.out.print("\nBus info: ");
 		System.out.printf("\nMark: %s", this.mark );
@@ -13,7 +19,7 @@ public class Bus{
 		this.busengine.output();
 	}
 	
-	public void init(String mark, int num, Engine busengine){
+	public Bus(String mark, int num, Engine busengine){
 		this.mark = mark;
 		if(num < 0){
 			this.num = 0;

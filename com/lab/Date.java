@@ -12,7 +12,14 @@ public class Date{
 	}
 	public Date(){
 	}
-	public void init(int day, int month, int year){
+
+	public Date(int value){
+		this.day = value;
+		this.month = value;
+		this.year = value;
+	}
+
+	public Date(int day, int month, int year){
 		if(day<0 || day>31){
 			this.day = 0; 
 		}
@@ -37,36 +44,58 @@ public class Date{
 		int day;
 		int month;
 		int year;
+		boolean input;
 		do{
-			System.out.print("Input day: ");
-			while(!in.hasNextInt()){
+			try{
 				System.out.println("That's not a number!");
 				System.out.print("Input day: ");
-				in.next();
-		}
-		day = in.nextInt();
-		}while(day <= 0 || day > 31);
-		this.day = day;
+				day = in.nextInt();
+				if(day < 1 || day > 31){
+					throw new Exception("Wrong input. Please input number between 1 and 31");
+				}
+				input = false; 
+				this.day = day;
+			}
+			catch(Exception e){
+				System.out.println("Wrong input! Please retry!");
+				input = true;
+				in.nextInt();
+			}
+		}while(input);
 		do{
-			System.out.print("Input month: ");
-			while(!in.hasNextInt()){
+			try{
 				System.out.println("That's not a number!");
 				System.out.print("Input month: ");
-				in.next();
-		}
-		month = in.nextInt();
-		}while(month <= 0 || month > 12);
-		this.month = month;
+				month = in.nextInt();
+				if(month < 1 || month > 12){
+					throw new Exception("Wrong input. Please input number between 1 and 12");
+				}
+				input = false; 
+				this.month = month;
+			}
+			catch(Exception e){
+				System.out.println("Wrong input! Please retry!");
+				input = true;
+				in.nextInt();
+			}
+		}while(input);
 		do{
-			System.out.print("Input year: ");
-			while(!in.hasNextInt()){
+			try{
 				System.out.println("That's not a number!");
 				System.out.print("Input year: ");
-				in.next();
-		}
-		year = in.nextInt();
-		}while(year <= 0);
-		this.year = year;
+				year = in.nextInt();
+				if(year < 1 || year > 2021){
+					throw new Exception("Wrong input. Please input number between 1 and 2021");
+				}
+				input = false; 
+				this.year = year;
+			}
+			catch(Exception e){
+				System.out.println("Wrong input! Please retry!");
+				input = true;
+				in.nextInt();
+			}
+		}while(input);
     }
 	
 	public int indays(Date date){
@@ -85,5 +114,5 @@ public class Date{
 	}
 	return Helper.Help(sum,sum1);
 	}
-	
+
 }

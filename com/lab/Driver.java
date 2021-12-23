@@ -15,7 +15,11 @@ public class Driver{
 	}
 	public Driver(){
 	}
-	public void init(String name, String lastname, Date birthdate){
+
+	public Driver(String value){
+        this.name = value;
+	}
+	public Driver(String name, String lastname, Date birthdate){
 		this.name = name;
 		this.lastname = lastname;
 		this.birthdate = birthdate;
