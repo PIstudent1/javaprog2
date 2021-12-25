@@ -1,15 +1,21 @@
 import com.lab.*;
 
 public class demo{
-	static Driver[] driv = new Driver[2];
+	static Human[] driv = new Human[2];
 	public static void main(String[] args) {
-		Date data = new Date();
-		Date data1 = new Date();
-		Ticket ticket = new Ticket();
-		int a = 0;
-		data.init(12,12,2021);
-		data1.init(12,12,1990);
-		a = data.indays(data1);
-		System.out.printf("Number days between days: %d", a);
+		Date[] data = new Date[2];
+		Date[][] data1 = new Date[3][2];
+		for(int i=0; i < 2; i++){
+			data[i] = new Date(12,11,2021);
+			data[i].output();
+		}
+		for(int i=0;i < 3; i++){
+			for(int j=0;j<2;j++){
+				data1[i][j] = new Date(15,8,2001);
+				data1[i][j].output();
+				System.out.print("  ");
+			}
+
+		}
 	}
 }

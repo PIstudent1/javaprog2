@@ -8,7 +8,7 @@ public class Ticket{
 	private String destination;
 	private int hours; 
 	private int minutes; 
-	private Driver ticketdriver = new Driver();
+	private Passenger passenger = new Passenger();
 
 
 	public static void ChangeDestination(Ticket ticket, String destination){  
@@ -21,7 +21,7 @@ public class Ticket{
 		System.out.printf("\nId:", this.id);
 		System.out.printf("\nSum: %d", this.sum );
 		System.out.printf("\nTime: %d:%d", this.hours, this.minutes); 
-		this.ticketdriver.output();
+		this.passenger.output();
 	}
 	public Ticket(){
 	}
@@ -30,7 +30,7 @@ public class Ticket{
 		this.sum = value;
 	}
 
-	public Ticket(String destination, int sum,  int hours, int minutes, Driver ticketdriver){
+	public Ticket(String destination, int sum,  int hours, int minutes, Passenger passenger){
 		this.destination = destination;
 		if (sum<0){
 			this.sum=0;
@@ -59,7 +59,7 @@ public class Ticket{
 		String destination;
 		int hours;
 		int minutes;
-		Driver ticketdriver = new Driver();
+		Passenger passenger = new Passenger();
 		System.out.print("\nTicket info: ");
 		Scanner in = new Scanner(System.in);
 		do{
@@ -101,7 +101,7 @@ public class Ticket{
 		}while(minutes < 0 || minutes > 60);
 		this.minutes = minutes;
 		ticketdriver.input();
-		this.ticketdriver = ticketdriver;
+		this.passenger = passenger;
 		count++;
 		id = count;
 	}
