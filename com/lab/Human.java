@@ -54,8 +54,15 @@ public class Human{
 class Driver extends Human{
  
 private Bus driversbus = new Bus();
+
 public Driver(){
 }
+
+public Driver(String name, String lastname, Date birthdate, Bus driversbus){
+	super(name,lastname, birthdate);
+	this.driversbus = driversbus;
+}
+
 public void Input(){
 	System.out.print("\nDriver info: ");
 	this.input();

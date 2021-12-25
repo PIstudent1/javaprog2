@@ -47,7 +47,7 @@ public class Date{
 		boolean input;
 		do{
 			try{
-				System.out.println("That's not a number!");
+				
 				System.out.print("Input day: ");
 				day = in.nextInt();
 				if(day < 1 || day > 31){
@@ -59,12 +59,12 @@ public class Date{
 			catch(Exception e){
 				System.out.println("Wrong input! Please retry!");
 				input = true;
-				in.nextInt();
+				
 			}
 		}while(input);
 		do{
 			try{
-				System.out.println("That's not a number!");
+				
 				System.out.print("Input month: ");
 				month = in.nextInt();
 				if(month < 1 || month > 12){
@@ -76,12 +76,11 @@ public class Date{
 			catch(Exception e){
 				System.out.println("Wrong input! Please retry!");
 				input = true;
-				in.nextInt();
+				
 			}
 		}while(input);
 		do{
 			try{
-				System.out.println("That's not a number!");
 				System.out.print("Input year: ");
 				year = in.nextInt();
 				if(year < 1 || year > 2021){
@@ -93,7 +92,7 @@ public class Date{
 			catch(Exception e){
 				System.out.println("Wrong input! Please retry!");
 				input = true;
-				in.nextInt();
+				
 			}
 		}while(input);
     }
