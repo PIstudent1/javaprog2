@@ -21,7 +21,7 @@ public class Ticket{
 		System.out.printf("\nId:", this.id);
 		System.out.printf("\nSum: %d", this.sum );
 		System.out.printf("\nTime: %d:%d", this.hours, this.minutes); 
-		this.passenger.output();
+		System.out.println(this.passenger);
 	}
 	public Ticket(){
 	}
@@ -100,7 +100,7 @@ public class Ticket{
 		minutes = in.nextInt();
 		}while(minutes < 0 || minutes > 60);
 		this.minutes = minutes;
-		ticketdriver.input();
+		passenger.input();
 		this.passenger = passenger;
 		count++;
 		id = count;

@@ -6,11 +6,10 @@ public class Human{
 	private String lastname;
 	private Date birthdate = new Date();
 	
-	public void output(){
-		System.out.printf("\nName: %s", this.name );
-		System.out.printf("\nLastame: %s", this.lastname );
-		System.out.printf("\nBirthdate: "); 
-		this.birthdate.output();
+	public String toString() {
+        return "\nName: " + this.name + "\n"
+		+ "Lastname: " + this.lastname + "\n"
+		+ "\nBirthdate: " + this.birthdate + "\n" ;
 	}
 	public Human(){
 	}
@@ -53,7 +52,7 @@ public class Human{
 
 class Driver extends Human{
  
-private Bus driversbus = new Bus();
+protected Bus driversbus = new Bus();
 
 public Driver(){
 }
@@ -70,11 +69,9 @@ public void Input(){
 	driversbus.input();
 }
 
-public void Output(){
-	System.out.print("\nDriver info: ");
-	this.output();
-	System.out.print("\nBus info: ");
-	driversbus.output();
+public String toString() {
+	return "\nDriver info: " + this + "\n"
+	+ "Bus info: " + driversbus + "\n";
 }
 
 }
@@ -82,5 +79,4 @@ public void Output(){
 class Passenger extends Human{
 public Passenger(){
 }
-
 }
