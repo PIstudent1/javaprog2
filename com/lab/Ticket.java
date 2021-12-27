@@ -1,6 +1,10 @@
 package com.lab; 
 import java.util.Scanner;
 
+interface Sale{
+	int sale(int sl1);
+}
+
 public class Ticket{
 	static private int count;
 	private int id;
@@ -106,20 +110,11 @@ public class Ticket{
 		id = count;
 	}
 	
-	public void sale(){
-		int sl1=0;
-		double sl2=0;
+	int sale(int sl1){
+		int sl2=0;
 		Scanner in = new Scanner(System.in);
-		do{
-			System.out.print("\nInput discount percentage: ");
-			while(!in.hasNextInt()){
-				System.out.println("That's not a number!");
-				System.out.print("\nInput discount percentage: ");
-				in.next();
-		}
-		sl1 = in.nextInt();
-		}while(sl1 < 0 || sl1 > 100);
 		sl2 = this.sum - (this.sum * sl1/100);
-		System.out.printf("\nDiscount price: %.2f", sl2);
+		return sl2;
+		
 	}
 }
