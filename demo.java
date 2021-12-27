@@ -17,5 +17,15 @@ public class demo{
 			}
 
 		}
+
+try{
+		Date dte = new Date(12, 11, 2021);
+		Date dte1 = dte.clone();
+		dte1.output();
+}	
+catch(CloneNotSupportedException ex){
+                  
+    System.out.println("Clonable not implemented");
+}
 	}
 }

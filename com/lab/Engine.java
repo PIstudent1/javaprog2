@@ -1,7 +1,7 @@
 package com.lab; 
 import java.util.Scanner;
 
-public class Engine{
+public class Engine implements Cloneable{
 	private int num;
 	private int power;
 	private Date createdate = new Date();
@@ -52,6 +52,13 @@ public class Engine{
 	createdate.input();
 	this.createdate = createdate;
     }
+	
+    public Engine clone() throws CloneNotSupportedException{
+     
+		Engine newEngine = (Engine) super.clone();
+		newEngine.createdate=(Date) createdate.clone();
+		return newEngine;
+	}
 
     public void tokvt(){
 		double ls=0.736, res = 0;
