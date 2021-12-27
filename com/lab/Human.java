@@ -1,7 +1,7 @@
 package com.lab; 
 import java.util.Scanner;
 
-public class Human{
+public abstract class Human{
 	private String name;
 	private String lastname;
 	private Date birthdate = new Date();
