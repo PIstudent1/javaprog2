@@ -2,7 +2,7 @@ package com.lab;
 import java.util.Scanner;
 
 
-public class Date{
+public class Date implements Cloneable{
 	private int day;
 	private int month;
 	private int year;
@@ -97,6 +97,12 @@ public class Date{
 		}while(input);
     }
 	
+	public Date clone() throws CloneNotSupportedException{
+      
+        return (Date) super.clone();
+    }
+
+
 	public int indays(Date date){
 		int sum;
 		int sum1;
